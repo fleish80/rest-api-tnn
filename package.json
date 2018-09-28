@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fleish80/rest-api-tnn/issues"
   },
-  "homepage": "https://github.com/fleish80/rest-api-tnn#readme"
+  "homepage": "https://github.com/fleish80/rest-api-tnn#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
