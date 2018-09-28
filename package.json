@@ -1,0 +1,20 @@
+{
+  "name": "rest-api-tnn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fleish80/rest-api-tnn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fleish80/rest-api-tnn/issues"
+  },
+  "homepage": "https://github.com/fleish80/rest-api-tnn#readme"
+}
