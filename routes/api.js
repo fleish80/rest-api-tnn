@@ -9,14 +9,15 @@ router.get('/ninjas', (req, res) => {
 });
 
 // //add a new ninja to the db
-router.post('/ninjas', (req, res) => {
+router.post('/ninjas', (req, res, next) => {
     Ninja.create(req.body).then((ninja) => {
         res.send(ninja);
-    });
+    })
+    .catch(next);
 });
 
 // //update a ninja in the db
-router.put('/ninjas/:id', (req, res) => {
+router.put('/ninjas/:id', (req, res, next) => {
     res.send({type: 'PUT'})
 });
 
