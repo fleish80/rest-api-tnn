@@ -6,7 +6,11 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost:27017/ninjago', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/ninjago', 
+{
+    useNewUrlParser: true,
+    useCreateIndex: true
+});
 
 // ES6 promises
 mongoose.Promise = global.Promise;

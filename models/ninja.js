@@ -23,7 +23,7 @@ const NinjaSchema = new Schema({
        type: String
     },
     available: {
-        type: Boolean,
+        type: Boolean, 
         default: false
     },
     //add in geo location
