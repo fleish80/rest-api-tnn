@@ -5,13 +5,12 @@ const router = express.Router();
 
 //get a list of ninjas from the db
 router.get('/ninjas', (req, res) => {
-
     Ninja.aggregate([
         {
             "$geoNear": {
                 "near": {
                     "type": "Point",
-                    "coordinates": [parseFloat(req.params.lng), parseFloat(req.params.lat)]
+                    "coordinates": [parseFloat(req.query.lng), parseFloat(req.query.lat)]
                 },
                 "distanceField": "distance",
                 "maxDistance": 1000000,
@@ -25,7 +24,9 @@ router.get('/ninjas', (req, res) => {
     ],
     function(err, docs) {
         //TODO: this docs are always undefined, sometime to check the problem
-        res.send(docs);       
+        // res.send(docs);       
+   }).then((ninjas) => {
+    res.send(ninjas);
    });
 });
 
