@@ -15,6 +15,8 @@ mongoose.connect('mongodb://localhost:27017/ninjago',
 // ES6 promises
 mongoose.Promise = global.Promise;
 
+app.use(express.static('public'))
+
 app.use(bodyParser.json());
 
 // initialize routes
