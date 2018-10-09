@@ -22,9 +22,7 @@ router.get('/ninjas', (req, res) => {
             "$sort": { "distance": -1 } // Sort the nearest first
         }
     ],
-    function(err, docs) {
-        //TODO: this docs are always undefined, sometime to check the problem
-        // res.send(docs);       
+    function(err, docs) {       
    }).then((ninjas) => {
     res.send(ninjas);
    });
@@ -34,14 +32,15 @@ router.get('/ninjas', (req, res) => {
 router.post('/ninjas', (req, res, next) => {
     Ninja.create(req.body).then((ninja) => {
         res.send(ninja);
-    })
-        .catch(next);
+    }).catch(next);
 });
 
 // //update a ninja in the db
 router.put('/ninjas/:id', (req, res, next) => {
-    Ninja.findOneAndUpdate({ _id: req.params.id }, req.body).then(() => {
-        Ninja.findOne({ _id: req.params.id }).then((ninja) => {
+    Ninja.findOneAndUpdate({ _id: req.params.id }, req.body)
+    .then(() => {
+        Ninja.findOne({ _id: req.params.id })
+        .then((ninja) => {
             res.send(ninja);
         })
     });
